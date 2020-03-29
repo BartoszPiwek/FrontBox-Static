@@ -1,0 +1,45 @@
+html,
+body {
+	width: 100%;
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.footer {
+	margin-top: auto;
+}
+
+* {
+	// Mobile tap color highlight
+	@if ($tap-color != false) {
+		-webkit-tap-highlight-color: $tap-color;
+	}
+
+	// Text selection color
+	@if ($text-selection-color != false) {
+		&::selection {
+			background: $text-selection-color;
+		}
+	}
+}
+
+.click-expand {
+	@include add-click-expand;
+}
+
+.wrap {
+	@include add-wrap(1024px, 20px);
+}
+
+.space {
+	@include add-space(20px, 10px);
+}
+
+.scrollbar,
+html {
+	@include add-scrollbar(20, color('primary'), color('secondary'));
+}

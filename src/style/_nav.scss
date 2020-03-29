@@ -1,0 +1,38 @@
+.nav-header-menu {
+	& > &__item {
+		display: block;
+		margin-bottom: 20px;
+		padding: 10px 6px;
+		transition: color $time-transition;
+		color: color("black");
+		text-align: center;
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		@include add-hover {
+			color: color("primary");
+		}
+
+		@include media-special("burger-hide") {
+			display: flex;
+			flex: 1 1 auto;
+			align-items: center;
+			justify-content: center;
+			margin-right: 16px;
+			margin-bottom: 0 !important;
+			padding: 0;
+
+			&:last-child {
+				margin-right: 0 !important;
+			}
+		}
+	}
+
+	@include media-special("burger-hide") {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}

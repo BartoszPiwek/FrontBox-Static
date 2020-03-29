@@ -1,0 +1,35 @@
+{
+	"editor.formatOnPaste": true,
+	"editor.tabSize": 2,
+	"files.exclude": {
+		"node_modules/": true,
+		"yarn*": true,
+		"*lock.json": true,
+		"validation*.json": true
+	},
+	"editor.tabCompletion": "on",
+	"scss.lint.idSelector": "warning",
+	"scss.lint.float": "warning",
+	"scss.lint.emptyRules": "error",
+	"scss.lint.duplicateProperties": "error",
+	"cSpell.words": [
+		"Gulpclass",
+		"antialiased",
+		"fablet",
+		"frontbox",
+		"gitfiles",
+		"itemprop",
+		"itemscope",
+		"itemtype",
+		"nofollow",
+		"tabindex",
+		"tsify",
+		"wcag",
+		"woff",
+		"wordpress"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.tslint": true,
+		"source.organizeImports": true
+	}
+}

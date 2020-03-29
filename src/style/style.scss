@@ -1,0 +1,14 @@
+/*!
+ * FrontBox-Static 0.0.1
+ * Bartosz Piwek
+ * https://github.com/BartoszPiwek/FronBox-Static
+ */
+
+@charset "utf-8";
+
+@import 'node_modules/@bpiwek/frontbox-style/index';
+@import './variables/*';
+@import './tools/*';
+@import './modules/*';
+@import './plugins/*';
+@import '_*';
