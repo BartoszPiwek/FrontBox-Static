@@ -28,7 +28,7 @@ body {
 }
 
 .click-expand {
-	@include add-click-expand;
+	@include add-click-expand(10px);
 }
 
 .wrap {

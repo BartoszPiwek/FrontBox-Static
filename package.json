@@ -30,6 +30,8 @@
 		"@types/node": "^13.9.5",
 		"autoprefixer": "^9.7.5",
 		"babel-plugin-loop-optimizer": "^1.4.1",
+		"babel-plugin-transform-remove-console": "^6.9.4",
+		"babel-preset-minify": "^0.5.1",
 		"browser-sync": "^2.26.7",
 		"browserify": "^16.5.0",
 		"cosmiconfig": "^6.0.0",
@@ -71,7 +73,7 @@
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"dependencies": {
-		"@bpiwek/frontbox-style": "^0.0.2",
+		"@bpiwek/frontbox-style": "^0.0.4",
 		"css-vars-ponyfill": "^2.2.1",
 		"js-cookie": "^2.2.1",
 		"vh-check": "^2.0.5"

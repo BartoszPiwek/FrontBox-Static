@@ -1,11 +1,12 @@
+// https://github.com/BartoszPiwek/FrontBox-Style
 @import 'node_modules/@bpiwek/frontbox-style/index';
 @import './variables/*';
 
-@include browser-reset;
-@include grid($grid-count: 12, $grid-breakpoints: $breakpoints);
-@include grid-style-row;
-@include wrap-style;
-@include add-screenreader-style;
+@include add-browser-reset-style;
+@include add-grid($grid-count: 12, $grid-breakpoints: $breakpoints);
+@include add-grid-row-style;
+@include add-wrap-style;
+@include add-screen-reader-style;
 
 @import './base/*';
 @import './plugins/*';

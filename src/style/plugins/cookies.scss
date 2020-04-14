@@ -42,7 +42,7 @@
 	}
 
 	&-exit {
-		@include add-click-expand;
+		@include add-click-expand(10px);
 
 		position: absolute;
 		top: 0;
