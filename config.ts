@@ -11,32 +11,9 @@ export const configBrowser = {
 	port: 8080,
 }
 
-export const configWebsite = {
-	name: 'FrontBox-Static',
-	description: 'Static WWW builder tool',
-	url: 'https://github.com/BartoszPiwek/FrontBox-Static',
-	locale: 'pl-PL',
-	color: '#e7be54',
-	author: 'Bartosz Piwek',
-	info: {
-		javascriptOff: true,
-		usingOldBrowser: true,
-	},
-}
-
-export const configProject = {
-	type: null, // 'wordpress'
-}
-
 export const configFramework = {
 	frameworkDevelopment: true,
-	frameworkDevelopmentFiles: [
-		`public`,
-		`*.md`,
-		`LICENSE`,
-		`gitfiles`,
-		'frontbox/gitfiles',
-	],
+	frameworkDevelopmentFiles: [`public`, `*.md`, `LICENSE`, `gitfiles`],
 }
 
 export const configStyle: IFrontboxConfig[] = [
@@ -51,19 +28,9 @@ export const configStyle: IFrontboxConfig[] = [
 			'./src/style/tools/*.scss',
 			'./src/style/modules/*.scss',
 			'./src/style/plugins/*.scss',
-		],
-	},
-	{
-		name: 'bootstrap',
-		files: './src/style/bootstrap.scss',
-		dest: 'css',
-		concatWith: 'style',
-		watch: [
 			'./src/style/bootstrap.scss',
 			'./src/style/bootstrap/*.scss',
-			'./src/style/variables/*.scss',
-			'./src/style/tools/*.scss',
-			'./src/style/modules/*.scss',
+			'./src/style/base/*.scss',
 		],
 	},
 	{
@@ -142,5 +109,11 @@ export const configCopy = [
 		files: './src/audio/*',
 		dest: 'audio',
 		watch: ['./src/audio/*'],
+	},
+	{
+		name: 'config',
+		files: ['./src/robots.txt', './src/.htaccess'],
+		dest: '',
+		watch: ['./src/robots.txt', './src/.htaccess'],
 	},
 ]

@@ -1,7 +1,5 @@
 # Node
 node_modules/
-*.lock
-
 .tscache
 .vscode
 docs
@@ -17,9 +15,6 @@ log
 # Maps
 *.map.*
 *.map
-
-# Generated
-src/images/favicons/*
 
 # Manifest
 yarn-error.log

@@ -1,6 +1,6 @@
 {
 	"name": "@bpiwek/frontbox-static",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": "Bartosz Piwek",
 	"description": "Bunch of functions, snippets, templates, tasks and so on for Front-End Developer",
 	"homepage": "https://github.com/BartoszPiwek/FrontBox-Static",
@@ -10,6 +10,10 @@
 	"scripts": {
 		"start": "gulp buildWebsite --watch --server",
 		"build": "gulp buildWebsite --prod",
+		"build-prod": "gulp buildWebsite --prod && gulp optimizeAssets --prod",
+		"svg": "gulp optimizeSvg",
+		"favicon": "gulp buildFavicons",
+		"optimize": "gulp optimizeAssets",
 		"test": "gulp test",
 		"update": "ncu -u",
 		"server": "gulp createServer --server"
@@ -45,6 +49,7 @@
 		"gulp-favicons": "^2.4.0",
 		"gulp-if": "^3.0.0",
 		"gulp-image": "^6.1.0",
+		"gulp-imagemin": "^7.1.0",
 		"gulp-newer": "^1.4.0",
 		"gulp-postcss": "^8.0.0",
 		"gulp-pug": "^4.0.1",

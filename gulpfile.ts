@@ -1,5 +1,5 @@
 /*!
- * FrontBox-Static 0.0.1
+ * FrontBox-Static 0.0.2
  * Bartosz Piwek
  * https://github.com/BartoszPiwek/FrontBox-Static
  */
@@ -11,6 +11,8 @@ import { websiteDestinationPath } from './frontbox/gulp/frontbox'
 import { FrontboxGulpHTML } from './frontbox/gulp/html'
 import { FrontboxGulpScript } from './frontbox/gulp/script'
 import { FrontboxGulpStyle } from './frontbox/gulp/style'
+
+require('./frontbox/gulp/assets')
 
 export const browserSync = require('browser-sync').create()
 
@@ -76,5 +78,20 @@ export class Gulpfile {
 		} else {
 			done()
 		}
+	}
+
+	@SequenceTask()
+	buildFavicons() {
+		return ['generateFavicons']
+	}
+
+	@SequenceTask()
+	optimizeSvg() {
+		return ['optimizeSvgBase', 'optimizeSvgColored']
+	}
+
+	@SequenceTask()
+	optimizeAssets() {
+		return ['optimizeImages', 'optimizeSvg']
 	}
 }

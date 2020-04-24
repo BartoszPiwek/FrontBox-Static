@@ -6,13 +6,18 @@ import * as gulpif from 'gulp-if'
 import * as postcss from 'gulp-postcss'
 import * as sass from 'gulp-sass'
 import * as sassGlob from 'gulp-sass-glob'
+import * as uncss from 'uncss'
 import * as sourcemaps from 'gulp-sourcemaps'
 import { Gulpclass, Task } from 'gulpclass/Decorators'
-import * as uncss from 'uncss'
 import { configStyle } from '../../config'
 import { browserSync } from '../../gulpfile'
-import { AbstractFrontboxGulpTask, getMode, websiteDestinationPath } from './frontbox'
+import {
+	AbstractFrontboxGulpTask,
+	getMode,
+	websiteDestinationPath,
+} from './frontbox'
 import { IFrontboxConfig, IFrontboxTask } from './interface'
+import { uncssIgnore, uncssIgnoreSheets } from '../../uncss'
 
 const argv = require('yargs').argv
 
@@ -23,7 +28,7 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 	}
 
 	task(element: IFrontboxConfig) {
-		return new Promise(resolve => {
+		return new Promise((resolve) => {
 			src(`${element.files}`, {
 				allowEmpty: true,
 			})
@@ -45,30 +50,20 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 	}
 
 	taskProd(element: IFrontboxConfig) {
-		return new Promise(resolve => {
+		return new Promise((resolve) => {
 			src(`${element.files}`, {
 				allowEmpty: true,
 			})
 				.pipe(
 					postcss([
 						autoprefixer(),
-						// postcssExtractMediaQuery(),
 						cssnano(),
 						uncss.postcssPlugin({
-							html: [`./public/${getMode}/**/*.html`],
-							ignoreSheets: [/fonts.googleapis/],
-							htmlroot: `./public/${getMode}`,
-							ignore: [
-								/\.select2*/,
-								/\.js_*/,
-								/expanded/,
-								/js/,
-								/wp-/,
-								/align/,
-								/admin-bar/,
-								/\.*slick*/,
-								/\.*active*/,
-							],
+							html: [`${websiteDestinationPath}/*.html`],
+							ignore: uncssIgnore,
+							ignoreSheets: uncssIgnoreSheets,
+							strictSSL: false,
+							htmlroot: websiteDestinationPath,
 						}),
 					])
 				)
@@ -82,20 +77,20 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 
 	async concatFiles() {
 		const configTasksWithoutConcat = this.configTask.filter(
-			v => !v.concatWith
+			(v) => !v.concatWith
 		)
 
 		await this.asyncForEach(
 			configTasksWithoutConcat,
-			async mainConfigStyle => {
+			async (mainConfigStyle) => {
 				this.concatTasks[mainConfigStyle.name] = () => {
 					const filesToConcat = this.configTask.filter(
-						v =>
+						(v) =>
 							v.concatWith === mainConfigStyle.name ||
 							v.name === mainConfigStyle.name
 					)
 					let pathFilesToConcat = filesToConcat.map(
-						concatConfigStyle => {
+						(concatConfigStyle) => {
 							return (
 								[
 									this.destinationPath
@@ -105,7 +100,7 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 									concatConfigStyle.name,
 								]
 									.filter(
-										concatConfigStyle =>
+										(concatConfigStyle) =>
 											concatConfigStyle != ''
 									)
 									.join('/') + '.css'
@@ -113,7 +108,7 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 						}
 					)
 
-					return new Promise(resolve => {
+					return new Promise((resolve) => {
 						src(pathFilesToConcat)
 							.pipe(concat(`${mainConfigStyle.name}.css`))
 							.pipe(
@@ -136,11 +131,11 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 
 	@Task()
 	async start() {
-		this.createTasks(element => {
+		this.createTasks((element) => {
 			return this.task(element)
 		})
 
-		await this.loopTasks(async element => {
+		await this.loopTasks(async (element) => {
 			await this.tasks[element.name]()
 		})
 
@@ -155,14 +150,14 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 
 		this.tasks = []
 
-		this.configTask.forEach(v => {
+		this.configTask.forEach((v) => {
 			if (v.concatWith) {
 				return
 			}
 
 			v.files =
 				[`./public`, getMode, v.dest, v.name]
-					.filter(concatConfigStyle => concatConfigStyle != '')
+					.filter((concatConfigStyle) => concatConfigStyle != '')
 					.join('/') + '.css'
 
 			this.tasks[v.name] = async () => {
@@ -170,7 +165,7 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 			}
 		})
 
-		await this.loopTasks(async element => {
+		await this.loopTasks(async (element) => {
 			if (element.concatWith) {
 				return
 			}

@@ -1,6 +1,6 @@
 export interface IFrontboxConfig {
 	name: string
-	files: string
+	files: string | string[]
 	dest: string
 	watch: string[]
 	concatWith?: string

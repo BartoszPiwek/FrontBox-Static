@@ -27,19 +27,42 @@ body {
 	}
 }
 
+@include grid($grid-count: 12);
+
 .click-expand {
-	@include add-click-expand(10px);
+	@include click-expand(10px);
 }
 
 .wrap {
-	@include add-wrap(1024px, 20px);
+	@extend %wrap-style;
+
+	@include wrap(1024, 15px);
+}
+
+.row {
+	@extend %grid-style;
 }
 
 .space {
-	@include add-space(20px, 10px);
+	@include space(20px, 10px);
+
+	&-x {
+		@include space-x(20px);
+	}
 }
 
-.scrollbar,
-html {
-	@include add-scrollbar(20, color('primary'), color('secondary'));
+.group {
+	@extend %group-style;
+}
+
+.square {
+	@extend %square-style;
+}
+
+.wrap {
+	@extend %wrap-style;
+}
+
+video {
+	width: 100%;
 }
