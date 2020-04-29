@@ -78,7 +78,7 @@
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"dependencies": {
-		"@bpiwek/frontbox-style": "^0.0.4",
+		"@bpiwek/frontbox-style": "^0.0.5",
 		"css-vars-ponyfill": "^2.2.1",
 		"js-cookie": "^2.2.1",
 		"vh-check": "^2.0.5"

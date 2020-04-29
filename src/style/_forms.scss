@@ -102,7 +102,7 @@ Style guide: Forms.input-default
 		padding-left: 30px;
 		cursor: pointer;
 
-		@include add-hover {
+		@include hover {
 			.input-checkbox {
 				// Fake checkbox element
 				&__input {
@@ -229,29 +229,17 @@ Style guide: Forms.input-text
 	&:hover {
 		border-color: transparentize(color("black"), 0.4);
 		color: transparentize(color("black"), 0.4);
-		@include add-input-placeholder {
-			color: transparentize(color("black"), 0.4);
-		}
 	}
 
 	&:active,
 	&:focus {
 		border-color: color("black");
 		color: color("black");
-		@include add-input-placeholder {
-			color: color("black");
-		}
 	}
 
 	&--block {
 		display: block;
 		width: 100%;
-	}
-
-	@include add-input-placeholder {
-		transition: color $time-transition;
-		color: color("primary");
-		font-style: italic;
 	}
 }
 

@@ -1,6 +1,6 @@
 .list {
 	&__item {
-		color: color("default");
+		color: color('default');
 	}
 
 	&--same-size {
@@ -18,7 +18,7 @@
 				padding-left: 20px;
 
 				&:before {
-					content: "";
+					content: '';
 					display: block;
 					position: absolute;
 					top: 4px;
@@ -26,7 +26,7 @@
 					width: 8px;
 					height: 8px;
 					border-radius: 50%;
-					background-color: color("primary");
+					background-color: color('primary');
 				}
 			}
 		}
@@ -59,11 +59,12 @@ Style guide: List.vertical
 */
 
 .list--vertical {
-	@include add-space-y(14px);
+	@include space-y(14px);
 }
 
 .list--horizontal {
-	@include add-space-x(26px);
+	@include space-x(26px);
+
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

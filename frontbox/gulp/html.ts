@@ -6,6 +6,7 @@ import { configHtml } from '../../config'
 import { browserSync } from '../../gulpfile'
 import { AbstractFrontboxGulpTask, getMode } from './frontbox'
 import { IFrontboxConfig, IFrontboxTask } from './interface'
+import * as pugFilters from "./pug-filters";
 
 const argv = require('yargs').argv
 const pugOptions = {
@@ -15,9 +16,7 @@ const pugOptions = {
 	},
 	pretty: true,
 	verbose: false,
-	filters: require('./pug-filters')({
-		version: getMode,
-	}),
+	filters: pugFilters,
 }
 
 @Gulpclass()

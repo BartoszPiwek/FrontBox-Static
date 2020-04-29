@@ -9,7 +9,7 @@ Style guide: Component.Links
 	// cursor: pointer;
 
 	// &__group {
-	// 	@include add-space-x(10px);
+	// 	@include space-x(10px);
 	// 	display: flex;
 	// 	flex-direction: row;
 	// 	flex-wrap: nowrap;
@@ -32,7 +32,7 @@ Style guide: Component.Links
 	// 		fill: color("primary");
 	// 	}
 
-	// 	@include add-hover {
+	// 	@include hover {
 	// 		color: darken(color("primary"), 10%);
 
 	// 		.icon {
@@ -44,7 +44,7 @@ Style guide: Component.Links
 	// // &--secondary {
 	// // }
 
-	// @include add-disable {
+	// @include disable {
 	// 	color: color("disable") !important;
 	// 	cursor: not-allowed;
 

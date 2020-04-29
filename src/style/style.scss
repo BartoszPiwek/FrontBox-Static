@@ -1,7 +1,6 @@
-@charset "utf-8";
-
 @import 'node_modules/@bpiwek/frontbox-style/index';
-@import './variables/*';
+
+@include browser-reset-style;
 
 /*!
  * FrontBox Static 0.0.2
@@ -9,8 +8,10 @@
  * https://github.com/BartoszPiwek/FrontBox-Static
  */
 
+@import './variables/*';
 @import './base/*';
 @import './plugins/*';
 @import './tools/*';
 @import './modules/*';
+@import './plugins/*';
 @import '_*';

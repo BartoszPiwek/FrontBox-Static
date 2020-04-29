@@ -1,6 +1,6 @@
 block variables
 <!DOCTYPE html>
-	html.js_disabled(lang= website.locale itemscope itemtype="http://schema.org/WebPage" dir="ltr" prefix="og: http://ogp.me/ns#")
+	html.js-disabled(lang='en' itemscope itemtype="http://schema.org/WebPage" dir="ltr" prefix="og: http://ogp.me/ns#")
 		head
 
 			//- Base Meta
@@ -25,10 +25,10 @@ block variables
 
 			//- OG Image
 			if ogImage
-				meta(property="og:image" content="/images/og/" + ogImage)
+				meta(property="og:image" content="images/og/" + ogImage)
 				meta(name="twitter:card" content="summary_large_image")
-				meta(name="twitter:image:src" content="/images/og/" + ogImage)
-				meta(itemprop="image" content="/images/og/" + ogImage)
+				meta(name="twitter:image:src" content="images/og/" + ogImage)
+				meta(itemprop="image" content="images/og/" + ogImage)
 
 			//- Keywords
 			if keywords
@@ -37,21 +37,19 @@ block variables
 			//- Addon Meta
 			meta(property="og:type" content='website')
 
-			if website.color
-				meta(name="theme-color" content= website.color)
-			if website.author
-				meta(name="author" content= website.author)
-
 			//- Assets
 			block assets_header
 				if dev
-					link(rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="all")
-				link(rel="stylesheet" type="text/css" href="/style.css" media="all")
+				link(rel="stylesheet" type="text/css" href="style.css" media="all")
 				if dev
-					link(rel="stylesheet" type="text/css" href="/css/utilities.css" media="all")
+					link(rel="stylesheet" type="text/css" href="css/utilities.css" media="all")
 
 			//- Favicon
 			include favicon.html
+
+			script
+				| document.documentElement.classList.remove('js-disabled');
+				| document.documentElement.classList.add('is-loading');
 
 		body#body
 
@@ -61,12 +59,6 @@ block variables
 			//- Main content
 			block content
 
-			.page__overlay#page-overlay
-
 			//- Assets
 			block assets_footer
-				script(src="/scripts/app.js")
-				
-			//- Polyfill
-			#js_check-scrollbar.scrollbar
-				#js_check-scrollbar__content
+				script(src="scripts/app.js")

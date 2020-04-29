@@ -1,28 +1,31 @@
 # FrontBox Static
 
-Static WWW builder tool. Use prepared html templates, include necessary element style and javascript behaviors, write own code using helpfull functions, speed up work with snippets.
+Static WWW builder tool. Use prepared html templates, include necessary element style and javascript behaviors, write own code using helpful functions, speed up work with snippets.
 
 ## Table of contents
 
--   [Preview/Status](#previewstatus)
--   [Information](#information)
--   [Requirements](#requirements)
--   [Gulp](#gulp)
--   [Projekt Tree](#projekt-tree)
--   [Testing Tools](#testing-tools)
--   [Bugs](#bugs)
+- [FrontBox Static](#frontbox-static)
+  - [Table of contents](#table-of-contents)
+  - [Preview/Status](#previewstatus)
+  - [Information](#information)
+  - [Requirements](#requirements)
+    - [Visual Studio Code addons](#visual-studio-code-addons)
+  - [Gulp](#gulp)
+    - [Terminal tasks](#terminal-tasks)
+  - [Projekt Tree](#projekt-tree)
+  - [Bugs](#bugs)
 
 ## Preview/Status
 
-[Development](https://quirky-perlman-434ce5.netlify.com):
+[Development](https://quirky-perlman-434ce5.netlify.app/):
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/ad028d61-7253-4819-a571-350e3acd37a5/deploy-status)
 
-[Productive](https://tender-pasteur-b2164f.netlify.com):
+[Productive](https://tender-pasteur-b2164f.netlify.app/):
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/7bf6c2d1-2d28-42b2-86d2-2c04fe70d4a1/deploy-status)
 
-[Documentation](https://vigorous-austin-c1164f.netlify.com):
+[Documentation](https://festive-meitner-bb09bc.netlify.app/):
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/b492ef35-2480-45e6-8420-b7926e588f1f/deploy-status)
 

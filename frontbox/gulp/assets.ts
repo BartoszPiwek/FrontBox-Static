@@ -9,7 +9,7 @@ task('generateFavicons', () => {
 	return src(`./src/images/favicon.png`)
 		.pipe(
 			favicons({
-				path: '/images/favicons',
+				path: './favicons',
 				display: 'standalone',
 				orientation: 'portrait',
 				scope: '',
@@ -20,9 +20,9 @@ task('generateFavicons', () => {
 				replace: false,
 			})
 		)
-		.pipe(dest(`./src/images/favicons`))
+		.pipe(dest(`./src/favicons`))
 		.on('end', () => {
-			src(`./src/images/favicons/favicon.html`).pipe(
+			src(`./src/favicons/favicon.html`).pipe(
 				dest(`./src/template/includes/`)
 			)
 		})

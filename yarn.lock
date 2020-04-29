@@ -789,10 +789,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bpiwek/frontbox-style@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@bpiwek/frontbox-style/-/frontbox-style-0.0.4.tgz#8ebc37486ace282f4124131581cc99657881660b"
-  integrity sha512-mD8+Oagf72Vfj6xiS9PJtC6Gke21Xzt4c5XwM4o28mMGBKmOK/K3OoKCAC1+AiiHr19b1HnIexKg/vkjP0N+Ig==
+"@bpiwek/frontbox-style@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@bpiwek/frontbox-style/-/frontbox-style-0.0.5.tgz#7f0b3e5e4341857a522fe8641076ba08366eaefe"
+  integrity sha512-BJGwFnhEzMAyjPnbYXEQLVYmOO1JjnZyxEqMX+iTgoH2yOpW/worG8hpAIRed1m7lMYGjM5K8O2WDxxdQp2aow==
 
 "@gulp-sourcemaps/identity-map@1.X":
   version "1.0.2"

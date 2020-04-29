@@ -1,12 +1,2 @@
-// // Utilities style
-// @import 'variables/media';
-// @import 'utilities/overflow';
-// @import 'utilities/display';
-// @import 'utilities/position';
-// @import 'utilities/col';
-// @import 'utilities/row';
-// @import 'utilities/text';
-// @import 'utilities/element';
-// @import 'utilities/flex';
-// @import 'utilities/margin';
-// @import 'utilities/padding';
+@import 'node_modules/@bpiwek/frontbox-style/index';
+@import 'utilities/*';

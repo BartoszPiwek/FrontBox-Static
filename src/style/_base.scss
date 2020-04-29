@@ -18,16 +18,16 @@ html {
 body {
 	@extend %scrollbar-placeholder;
 
-	background-color: color("secondary");
-	color: color("default");
+	background-color: color('secondary');
+	color: color('default');
 	font-family: $font-family;
 	font-size: 16px;
 }
 
-// add-scrollbar
+// scrollbar
 .scrollbar,
 body {
-	@include add-scrollbar(5px, color('primary'), color('secondary'));
+	@include scrollbar(5px, color('primary'), color('secondary'));
 }
 
 svg,

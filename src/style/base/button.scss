@@ -20,8 +20,8 @@ Style guide: Components.Button
 	transition: background-color $time-transition, color $time-transition, border-color $time-transition, transform $time-transition;
 	border: 0;
 	border-radius: 5px;
-	background-color: color("primary");
-	color: color("white");
+	background-color: color('primary');
+	color: color('white');
 	font-size: 14px;
 	letter-spacing: 0.4px;
 	text-align: center;
@@ -50,7 +50,7 @@ Style guide: Components.Button
 		cursor: not-allowed;
 
 		&:before {
-			content: "";
+			content: '';
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -58,13 +58,13 @@ Style guide: Components.Button
 			height: 100%;
 			border-radius: inherit;
 			opacity: 0.6;
-			background: color("black");
+			background: color('black');
 			pointer-events: none;
 		}
 	}
 
-	@include add-hover {
-		background-color: darken(color("primary"), 0.95);
+	@include hover {
+		background-color: darken(color('primary'), 0.95);
 	}
 }
 
@@ -88,10 +88,10 @@ Style guide: Components.Button.colors
 
 .btn {
 	&--primary {
-		background-color: color("primary");
+		background-color: color('primary');
 
-		@include add-hover {
-			background-color: darken(color("primary"), 0.8);
+		@include hover {
+			background-color: darken(color('primary'), 0.8);
 		}
 	}
 

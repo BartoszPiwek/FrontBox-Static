@@ -1,11 +1,11 @@
 .row--footer {
-	@include add-space(20px);
+	@include space(20px);
 }
 
 .footer {
 	padding: 35px 0;
 	overflow: hidden;
-	background-color: color("primary");
+	background-color: color('primary');
 
 	&__item {
 		> * {
@@ -21,13 +21,13 @@
 
 	&__title {
 		margin: 20px 0;
-		color: color("white");
+		color: color('white');
 		font-size: 28px;
 		font-weight: 200;
 	}
 
 	&__content {
-		color: color("black");
+		color: color('black');
 		font-size: 16px;
 	}
 }

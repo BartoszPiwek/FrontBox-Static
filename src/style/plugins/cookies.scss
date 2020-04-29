@@ -2,16 +2,16 @@
 	@extend %scrollbar-placeholder;
 
 	position: fixed;
-	z-index: index("menu") - 1;
+	z-index: index('menu') - 1;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	padding: 8px 0;
 	transition: transform $time-transition, opacity $time-transition;
-	border-top: 2px solid color("primary");
+	border-top: 2px solid color('primary');
 	opacity: 1;
-	background-color: transparentize(color("primary"), 0.1);
-	box-shadow: 0 -5px 10px 0 transparentize(color("black"), 0.4);
+	background-color: transparentize(color('primary'), 0.1);
+	box-shadow: 0 -5px 10px 0 transparentize(color('black'), 0.4);
 
 	&__img {
 		display: none;
@@ -27,7 +27,7 @@
 	}
 
 	&__text {
-		color: color("white");
+		color: color('white');
 		font-size: 14px;
 		text-align: justify;
 	}
@@ -42,7 +42,7 @@
 	}
 
 	&-exit {
-		@include add-click-expand(10px);
+		@include click-expand(10px);
 
 		position: absolute;
 		top: 0;
@@ -56,14 +56,14 @@
 
 			&:before,
 			&:after {
-				content: "";
+				content: '';
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				width: 100%;
 				height: 2px;
 				transform-origin: left top;
-				background-color: color("white");
+				background-color: color('white');
 			}
 
 			&:before {
@@ -75,7 +75,7 @@
 			}
 		}
 
-		@include add-hover {
+		@include hover {
 			.js_cookies-information-exit__icon {
 				transform: rotate(90deg);
 			}

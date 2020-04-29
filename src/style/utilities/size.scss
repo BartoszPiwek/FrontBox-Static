@@ -1,7 +1,7 @@
-@include add-responsive($breakpoints) {
+@include responsive($breakpoints) {
 	$prefix: &;
 
-	@at-root .#{$prefix}no{
+	@at-root .#{$prefix}no {
 		&-width {
 			width: auto !important;
 		}

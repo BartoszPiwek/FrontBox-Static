@@ -4,15 +4,15 @@
 		margin-bottom: 20px;
 		padding: 10px 6px;
 		transition: color $time-transition;
-		color: color("black");
+		color: color('black');
 		text-align: center;
 
 		&:last-child {
 			margin-bottom: 0 !important;
 		}
 
-		@include add-hover {
-			color: color("primary");
+		@include hover {
+			color: color('primary');
 		}
 	}
 }
