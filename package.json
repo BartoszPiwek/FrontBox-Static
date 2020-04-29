@@ -16,6 +16,23 @@
 		"update": "ncu -u",
 		"server": "gulp createServer --server"
 	},
+	"jshintConfig": {
+		"undef": true,
+		"unused": true,
+		"esversion": 6
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	},
+	"browserslist": [
+		"> 0.5%",
+		"last 2 versions",
+		"Firefox ESR",
+		"not dead",
+		"IE 9-11"
+	],
 	"bugs": {
 		"url": "https://github.com/BartoszPiwek/FrontBox-Static/issues"
 	},

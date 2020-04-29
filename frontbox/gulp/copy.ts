@@ -1,7 +1,7 @@
 import { dest, src } from "gulp";
 import * as newer from "gulp-newer";
 import { Gulpclass } from "gulpclass/Decorators";
-import { configCopy } from "../../config";
+import { configCopy } from "../../config/gulpfile";
 import { browserSync } from "../../gulpfile";
 import { AbstractFrontboxGulpTask } from "./frontbox";
 import { IFrontboxConfig, IFrontboxTask } from "./interface";

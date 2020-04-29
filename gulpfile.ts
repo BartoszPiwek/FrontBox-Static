@@ -3,6 +3,10 @@
  * Bartosz Piwek
  * https://github.com/BartoszPiwek/FrontBox-Static
  */
+require('./frontbox/gulp/assets')
+
+const argv = require('yargs').argv
+const del = require('del')
 
 import { Gulpclass, SequenceTask, Task } from 'gulpclass/Decorators'
 import { FrontboxGulpCopy } from './frontbox/gulp/copy'
@@ -11,12 +15,8 @@ import { FrontboxGulpHTML } from './frontbox/gulp/html'
 import { FrontboxGulpScript } from './frontbox/gulp/script'
 import { FrontboxGulpStyle } from './frontbox/gulp/style'
 
-require('./frontbox/gulp/assets')
-
 export const browserSync = require('browser-sync').create()
 
-const argv = require('yargs').argv
-const del = require('del')
 let copy: FrontboxGulpCopy
 let script: FrontboxGulpScript
 let style: FrontboxGulpStyle
@@ -25,7 +25,7 @@ let html: FrontboxGulpHTML
 @Gulpclass()
 export class Gulpfile {
 	@Task()
-	async createServer(done) {
+	createServer(done) {
 		return browserSync.init({
 			open: false,
 			host: 'localhost',

@@ -7,7 +7,7 @@ import * as stripCode from 'gulp-strip-code'
 import { Gulpclass, Task } from 'gulpclass/Decorators'
 import * as buffer from 'vinyl-buffer'
 import * as source from 'vinyl-source-stream'
-import { configScript } from '../../config'
+import { configScript } from '../../config/gulpfile'
 import { browserSync } from '../../gulpfile'
 import { AbstractFrontboxGulpTask } from './frontbox'
 import { IFrontboxConfig, IFrontboxTask } from './interface'
@@ -28,6 +28,9 @@ export class FrontboxGulpScript extends AbstractFrontboxGulpTask {
 				{
 					plugin: ['tsify'],
 					debug: !argv.prod,
+					options: {
+						transpileOnly: true,
+					}
 				}
 			)
 				.bundle()

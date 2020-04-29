@@ -1,4 +1,4 @@
-import { IFrontboxConfig } from './frontbox/gulp/interface'
+import { IFrontboxConfig } from '../frontbox/gulp/interface'
 
 export const configStyle: IFrontboxConfig[] = [
 	{
@@ -63,7 +63,7 @@ export const configHtml: IFrontboxConfig[] = [
 	},
 ]
 
-export const configCopy = [
+export const configCopy: IFrontboxConfig[] = [
 	{
 		name: 'image',
 		files: './src/images/**/*',
@@ -100,4 +100,10 @@ export const configCopy = [
 		dest: '',
 		watch: ['./src/robots.txt', './src/.htaccess'],
 	},
+	{
+		name: 'favicons',
+		files: './src/favicons/*',
+		dest: 'favicons',
+		watch: './src/favicons/*'
+	}
 ]

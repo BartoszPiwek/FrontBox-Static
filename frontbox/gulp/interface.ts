@@ -2,7 +2,7 @@ export interface IFrontboxConfig {
 	name: string
 	files: string | string[]
 	dest: string
-	watch: string[]
+	watch: string | string[]
 	concatWith?: string
 	otherTasksImpact?: boolean
 }

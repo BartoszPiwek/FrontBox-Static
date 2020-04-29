@@ -1,7 +1,7 @@
 import { html, body } from './elements';
 import { browser } from '../app';
 import { easeInOutQuad } from '../tools/transition';
-import { headerHeight } from '../../../consts';
+import { headerHeight } from '../../../config/breakpoints';
 
 /**
  * Toggle scroll lock for body element

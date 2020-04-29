@@ -3,21 +3,21 @@ import * as favicons from 'gulp-favicons'
 import * as imagemin from 'gulp-imagemin'
 import * as newer from 'gulp-newer'
 import * as svgmin from 'gulp-svgmin'
-import { websiteDestinationPath } from './frontbox'
 
 task('generateFavicons', () => {
 	return src(`./src/images/favicon.png`)
 		.pipe(
 			favicons({
-				path: './favicons',
+				path: '/favicons',
 				display: 'standalone',
 				orientation: 'portrait',
-				scope: '',
+				scope: '/',
+				start_url: '/',
 				version: 1.0,
-				logging: false,
 				html: 'index.html',
 				pipeHTML: true,
 				replace: false,
+				logging: false
 			})
 		)
 		.pipe(dest(`./src/favicons`));

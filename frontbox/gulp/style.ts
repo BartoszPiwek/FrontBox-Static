@@ -9,7 +9,7 @@ import * as sassGlob from 'gulp-sass-glob'
 import * as uncss from 'uncss'
 import * as sourcemaps from 'gulp-sourcemaps'
 import { Gulpclass, Task } from 'gulpclass/Decorators'
-import { configStyle } from '../../config'
+import { configStyle } from '../../config/gulpfile'
 import { browserSync } from '../../gulpfile'
 import {
 	AbstractFrontboxGulpTask,
@@ -17,7 +17,7 @@ import {
 	websiteDestinationPath,
 } from './frontbox'
 import { IFrontboxConfig, IFrontboxTask } from './interface'
-import { uncssIgnore, uncssIgnoreSheets } from '../../uncss'
+import { uncssIgnore, uncssIgnoreSheets } from '../../config/uncss'
 
 const argv = require('yargs').argv
 

@@ -1,6 +1,6 @@
 import { scroll, browser } from '../app';
 import { Component } from './component';
-import { breakpointsSpecial } from '../../../consts';
+import { breakpointsSpecial } from '../../../config/breakpoints';
 
 /**
  * Toggle burger container

@@ -1,6 +1,6 @@
-import { breakpoints } from "../../../consts";
 import { Component } from "./component";
 import { html } from "./elements";
+import { breakpoints } from "../../../config/breakpoints";
 
 interface IScroll {
 	top: number;
