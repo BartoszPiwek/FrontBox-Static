@@ -1,21 +1,5 @@
 import { IFrontboxConfig } from './frontbox/gulp/interface'
 
-export const configDocumentationStyle = {
-	dest: 'documentation/style',
-}
-
-export const configBrowser = {
-	open: false,
-	host: 'localhost',
-	proxy: false,
-	port: 8080,
-}
-
-export const configFramework = {
-	frameworkDevelopment: true,
-	frameworkDevelopmentFiles: [`public`, `*.md`, `LICENSE`, `gitfiles`],
-}
-
 export const configStyle: IFrontboxConfig[] = [
 	{
 		name: 'style',

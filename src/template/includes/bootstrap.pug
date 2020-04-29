@@ -45,7 +45,7 @@ block variables
 					link(rel="stylesheet" type="text/css" href="css/utilities.css" media="all")
 
 			//- Favicon
-			include favicon.html
+			:includeOptional(file="src/favicons/index.html")
 
 			script
 				| document.documentElement.classList.remove('js-disabled');

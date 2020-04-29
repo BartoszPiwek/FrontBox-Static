@@ -57,7 +57,16 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 				.pipe(
 					postcss([
 						autoprefixer(),
-						cssnano(),
+						cssnano({
+							preset: [
+								'default',
+								{
+									discardComments: {
+										removeAll: true,
+									},
+								},
+							],
+						}),
 						uncss.postcssPlugin({
 							html: [`${websiteDestinationPath}/*.html`],
 							ignore: uncssIgnore,

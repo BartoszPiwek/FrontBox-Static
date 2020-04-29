@@ -15,17 +15,12 @@ task('generateFavicons', () => {
 				scope: '',
 				version: 1.0,
 				logging: false,
-				html: 'favicon.html',
+				html: 'index.html',
 				pipeHTML: true,
 				replace: false,
 			})
 		)
-		.pipe(dest(`./src/favicons`))
-		.on('end', () => {
-			src(`./src/favicons/favicon.html`).pipe(
-				dest(`./src/template/includes/`)
-			)
-		})
+		.pipe(dest(`./src/favicons`));
 })
 
 task('optimizeSvgBase', () => {
@@ -82,8 +77,8 @@ task('optimizeSvgColored', () => {
 })
 
 task('optimizeImages', () => {
-	return src(`${websiteDestinationPath}/images/**/*.{png,jpg,gif}`)
-		.pipe(newer(`${websiteDestinationPath}/images/**/*.{png,jpg,gif}`))
+	return src(`src/images/**/*.{png,jpg,gif}`)
+		.pipe(newer(`src/images/**/*.{png,jpg,gif}`))
 		.pipe(imagemin())
-		.pipe(dest(`${websiteDestinationPath}/images/`))
+		.pipe(dest(`src/images/`))
 })

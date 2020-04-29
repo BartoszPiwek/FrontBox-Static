@@ -1,20 +1,18 @@
-# Node
 node_modules/
 .tscache
 .vscode
-docs
 
-# Libs
-src/js/libs/*
+# Config
+.stylelintrc
 
 # Generated
 public
 documentation
 log
+src/favicons/
+!src/favicons/.gitkeep
+yarn-error.log
 
 # Maps
 *.map.*
 *.map
-
-# Manifest
-yarn-error.log

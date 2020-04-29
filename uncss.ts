@@ -1,3 +1,8 @@
-export const uncssIgnore: Array<string | RegExp> = [/\.js-*/, /\.is-/]
+export const uncssIgnore: Array<string | RegExp> = [
+  /\.js-*/,
+  /\.is-/
+];
 
-export const uncssIgnoreSheets: Array<string | RegExp> = ['/fonts.googleapis/']
+export const uncssIgnoreSheets: Array<string | RegExp> = [
+  '/fonts.googleapis/'
+];

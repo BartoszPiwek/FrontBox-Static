@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { getMode, websiteDestinationPath } from "./frontbox";
+import { websiteDestinationPath } from "./frontbox";
 
 export interface IPugFiltersSvg {
 	file: string;
@@ -43,44 +43,31 @@ export function pagesLinks(pug, args: IPugFiltersPagesLinks) {
 		}).join('<br>');
 }
 
-// export default function () {
-// 	const fs = require('fs'),
-// 		path = require('path');
+export function reverseText(text: string) {
+	return text.split('').reverse().join('');
+}
 
-// 	return {
-// 		printFilesLink: (path) => {
-// 			let output = '';
+export function escape(text: string) {
+	return text
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;')
+		.replace(/#/g, '&#35;')
+		.replace(/\\/g, '\\\\')
+		.replace(/\n/g, '<br>');
+};
 
-// 			fs.readdirSync(`${getMode}/${path}`, {
-// 				withFileTypes: true,
-// 			}).forEach((file) => {
-// 				let name = file.slice(0, -5);
+export interface IPugFiltersIncludeOptional {
+	file: string;
+}
+export function includeOptional(pug, args: IPugFiltersIncludeOptional) {
+	const { file } = args;
 
-// 				if (name !== 'index' && file.endsWith('.html')) {
-// 					output += `<a class="block mt-5 mb-5" href="./${name}.html">${name}</a>`;
-// 				}
-// 			});
+	if (fs.existsSync(`./${file}`)) {
+		return fs.readFileSync(`./${file}`, 'utf8');
+	}
 
-// 			return output;
-// 		},
-
-// 		'text-reverse': (block) => {
-// 			return block.split('').reverse().join('');
-// 		},
-
-// 		pageName: (block) => {
-// 			return block;
-// 		},
-
-// 		escape: (block) => {
-// 			return block
-// 				.replace(/&/g, '&amp;')
-// 				.replace(/</g, '&lt;')
-// 				.replace(/>/g, '&gt;')
-// 				.replace(/"/g, '&quot;')
-// 				.replace(/#/g, '&#35;')
-// 				.replace(/\\/g, '\\\\')
-// 				.replace(/\n/g, '<br>');
-// 		},
-// 	};
-// }
+	console.warn(`File "${file}" doesn't exist - skip include.`);
+	return '';
+}

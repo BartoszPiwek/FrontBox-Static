@@ -4,16 +4,16 @@ Static WWW builder tool. Use prepared html templates, include necessary element 
 
 ## Table of contents
 
-- [FrontBox Static](#frontbox-static)
-  - [Table of contents](#table-of-contents)
-  - [Preview/Status](#previewstatus)
-  - [Information](#information)
-  - [Requirements](#requirements)
-    - [Visual Studio Code addons](#visual-studio-code-addons)
-  - [Gulp](#gulp)
-    - [Terminal tasks](#terminal-tasks)
-  - [Projekt Tree](#projekt-tree)
-  - [Bugs](#bugs)
+-   [FrontBox Static](#frontbox-static)
+    -   [Table of contents](#table-of-contents)
+    -   [Preview/Status](#previewstatus)
+    -   [Information](#information)
+    -   [Requirements](#requirements)
+        -   [Visual Studio Code addons](#visual-studio-code-addons)
+    -   [Gulp](#gulp)
+        -   [Terminal tasks](#terminal-tasks)
+    -   [Projekt Tree](#projekt-tree)
+    -   [Bugs](#bugs)
 
 ## Preview/Status
 
@@ -76,19 +76,16 @@ Project contain [FrontBox-Style](https://github.com/BartoszPiwek/FrontBox-Style)
 ## Projekt Tree
 
 ```
-└─── public/                              | Output generated website folder
+└─── public/                              | Generated website
     ├─── prod/
     └─── dev/
 └─── src/
     ├─── audio/
     ├─── fonts/
+    ├─── favicons/                        | Generated favicons
     └─── images/
-        ├─── favicons/                    | Generated favicons folder
-        ├─── svg/                         | SVG files folder
-        ├─── cookies.png                  | Cookie image
+        ├─── svg/                         | SVG files
         ├─── favicon.png                  | Site favicon
-        ├─── logo.png                     | Site logo image
-        ├─── placeholder.png              | Placeholder image for lazyload
         └~~~ other image files
     └─── scripts/
         ├─── bootstrap/                   | FrontBox modules folder

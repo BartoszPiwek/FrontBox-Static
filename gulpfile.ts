@@ -5,7 +5,6 @@
  */
 
 import { Gulpclass, SequenceTask, Task } from 'gulpclass/Decorators'
-import { configBrowser } from './config'
 import { FrontboxGulpCopy } from './frontbox/gulp/copy'
 import { websiteDestinationPath } from './frontbox/gulp/frontbox'
 import { FrontboxGulpHTML } from './frontbox/gulp/html'
@@ -27,40 +26,56 @@ let html: FrontboxGulpHTML
 export class Gulpfile {
 	@Task()
 	async createServer(done) {
-		if (argv.server) {
-			return browserSync.init({
-				...configBrowser,
-				server: {
-					baseDir: websiteDestinationPath,
-				},
-			})
-		} else {
-			done()
-		}
+		return browserSync.init({
+			open: false,
+			host: 'localhost',
+			proxy: false,
+			port: 8080,
+			server: {
+				baseDir: websiteDestinationPath,
+			},
+		})
 	}
 
 	@Task()
-	async cleanWebsite(done) {
-		if (argv.clean || argv.prod || argv.new) {
-			return del.sync(websiteDestinationPath)
-		} else {
-			done()
-		}
+	async cleanWebsite() {
+		return del.sync(websiteDestinationPath)
 	}
 
 	@SequenceTask()
-	buildWebsite() {
+	website() {
 		style = new FrontboxGulpStyle()
 		html = new FrontboxGulpHTML()
 		script = new FrontboxGulpScript()
 		copy = new FrontboxGulpCopy()
 
-		return [
-			'cleanWebsite',
-			'buildDevWebsite',
-			'buildProdWebsite',
-			'createServer',
-		]
+		const sequenceTask = [];
+
+		if (argv.clean) {
+			sequenceTask.push('cleanWebsite')
+		}
+
+		if (argv.favicon) {
+			sequenceTask.push('generateFavicons')
+		}
+
+		if (argv.optimized) {
+			sequenceTask.push('optimizeAssets')
+		}
+
+		if (argv.generate) {
+			sequenceTask.push('buildDevWebsite')
+		}
+
+		if (argv.generate && argv.prod) {
+			sequenceTask.push('buildProdWebsite')
+		}
+
+		if (argv.server) {
+			sequenceTask.push('createServer')
+		}
+
+		return sequenceTask;
 	}
 
 	@Task()
@@ -73,25 +88,11 @@ export class Gulpfile {
 
 	@Task()
 	async buildProdWebsite(done) {
-		if (argv.prod) {
-			await style.startProd()
-		} else {
-			done()
-		}
-	}
-
-	@SequenceTask()
-	buildFavicons() {
-		return ['generateFavicons']
-	}
-
-	@SequenceTask()
-	optimizeSvg() {
-		return ['optimizeSvgBase', 'optimizeSvgColored']
+		await style.startProd()
 	}
 
 	@SequenceTask()
 	optimizeAssets() {
-		return ['optimizeImages', 'optimizeSvg']
+		return ['optimizeSvgBase', 'optimizeSvgColored', 'optimizeImages']
 	}
 }
