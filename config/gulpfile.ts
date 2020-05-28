@@ -36,6 +36,8 @@ export const configScript = [
 			'./src/scripts/app/*.ts',
 			'./src/scripts/bootstrap/*.ts',
 			'./src/scripts/modules/*.ts',
+			'./src/scripts/modals/*.ts',
+			'./src/scripts/services/*.ts',
 		],
 	},
 ]
@@ -61,6 +63,12 @@ export const configHtml: IFrontboxConfig[] = [
 		otherTasksImpact: true,
 		watch: ['./src/template/partials/*.pug'],
 	},
+	{
+		name: 'modals',
+		files: './src/template/modals/*.pug',
+		dest: 'modals',
+		watch: ['./src/template/modals/*.pug'],
+	}
 ]
 
 export const configCopy: IFrontboxConfig[] = [

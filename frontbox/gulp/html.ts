@@ -74,15 +74,4 @@ export class FrontboxGulpHTML extends AbstractFrontboxGulpTask {
 			this.watch('html')
 		}
 	}
-
-	// @Task('hash')
-	// hash() {
-	// 	return src(`${websiteDestinationPath}/*.html`)
-	// 		.pipe(
-	// 			hash({
-	// 				asset: `${websiteDestinationPath}`
-	// 			})
-	// 		)
-	// 		.pipe(dest(`${websiteDestinationPath}`));
-	// }
 }

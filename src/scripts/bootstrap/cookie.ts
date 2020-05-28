@@ -1,6 +1,6 @@
 import * as Cookies from 'js-cookie';
 import { Component } from './component';
-import { getFile } from './frontbox';
+import { getFileContent } from './frontbox';
 
 /**
  * Inform users that your site uses cookies
@@ -29,7 +29,7 @@ export class CookieInformation extends Component {
 			return;
 		}
 
-		const contentHTML = await getFile(this.templateUrl);
+		const contentHTML = await getFileContent(this.templateUrl);
 		document.body.insertAdjacentHTML('beforeend', contentHTML);
 
 		const cookie = document.getElementById('js_cookies-information');

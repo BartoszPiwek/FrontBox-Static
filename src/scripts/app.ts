@@ -13,6 +13,7 @@ import { ProtectEmail } from "./bootstrap/protect-email";
 import { Scroll } from "./bootstrap/scroll";
 import { Sticky } from "./bootstrap/sticky";
 import { Wcag } from "./bootstrap/wcag";
+import { modalsInit } from "./modals/init";
 
 export const scroll = new Scroll();
 export const browser = new Browser();
@@ -31,6 +32,8 @@ window.onload = () => {
 	new ProtectEmail({
 		elements: document.querySelectorAll(".js_email")
 	});
+
+	modalsInit();
 
 	/* Forms */
 	new InputCounter({

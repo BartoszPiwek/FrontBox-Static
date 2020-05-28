@@ -68,11 +68,13 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 							],
 						}),
 						uncss.postcssPlugin({
-							html: [`${websiteDestinationPath}/*.html`],
+							html: `${websiteDestinationPath}/*.html`,
 							ignore: uncssIgnore,
 							ignoreSheets: uncssIgnoreSheets,
-							strictSSL: false,
-							htmlroot: websiteDestinationPath,
+							htmlroot: `${websiteDestinationPath}/`,
+							jsdom: {
+								runScripts: 'outside-only'
+							},
 						}),
 					])
 				)

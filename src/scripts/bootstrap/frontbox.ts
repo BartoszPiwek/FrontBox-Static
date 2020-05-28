@@ -1,4 +1,4 @@
-export async function getFile(url: string): Promise<string> {
+export async function getFileContent(url: string): Promise<string> {
 	return new Promise((resolve, reject) => {
 		const xhr = new XMLHttpRequest();
 		xhr.open('GET', url, true);
