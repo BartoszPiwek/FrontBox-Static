@@ -85,6 +85,7 @@
 		"stylelint-config-property-sort-order-smacss": "^6.0.0",
 		"stylelint-order": "^4.0.0",
 		"stylelint-scss": "^3.17.1",
+		"svg64": "^1.0.0",
 		"svgmin": "^0.1.0",
 		"ts-node": "^8.9.1",
 		"tsify": "^4.0.1",

@@ -18,6 +18,7 @@ import {
 } from './frontbox'
 import { IFrontboxConfig, IFrontboxTask } from './interface'
 import { uncssIgnore, uncssIgnoreSheets } from '../../config/uncss'
+import { scssFunctions } from './scss-functions'
 
 const argv = require('yargs').argv
 
@@ -34,7 +35,9 @@ export class FrontboxGulpStyle extends AbstractFrontboxGulpTask {
 			})
 				.pipe(gulpif(!argv.prod, sourcemaps.init({ loadMaps: true })))
 				.pipe(sassGlob())
-				.pipe(sass())
+				.pipe(sass({
+					functions: scssFunctions
+				}))
 				.pipe(
 					gulpif(
 						!argv.prod,
