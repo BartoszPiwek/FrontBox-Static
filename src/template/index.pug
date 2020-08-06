@@ -1,10 +1,10 @@
-//- Include bootstrap template
+//- Extend bootstrap template
 	blocks:
 		- variables
 		- content
 		- assets_header
 		- assets_footer
-extends includes/bootstrap.pug
+extends extends/bootstrap.pug
 block variables
 	- var title = 'Hello World with FrontBox Starter!'
 	- var description = 'Default index page'
@@ -17,11 +17,6 @@ block append content
 	include includes/header.pug
 
 	main#page.page
-		.wrap
-			| Change me!
-
-		button(type="button", attr-modal="example")
-			| Open modal example
 
 	include includes/footer.pug
 

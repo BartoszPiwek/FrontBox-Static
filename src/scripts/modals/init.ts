@@ -1,24 +1,24 @@
-import { ModalsService } from "../service/modals";
-import { ExampleModal } from "./example";
+// import { ModalsService } from "../service/modals";
+// import { ExampleModal } from "./example";
 
-export let modals: ModalsService;
+// export let modals: ModalsService;
 
-export function modalsInit() {
-  const modalTriggers = document.querySelectorAll('[attr-modal]');
+// export function modalsInit() {
+//   const modalTriggers = document.querySelectorAll('[attr-modal]');
 
-  if (!modalTriggers) {
-    return;
-  }
+//   if (!modalTriggers) {
+//     return;
+//   }
 
-  modals = new ModalsService({
-    modals: {
-      example: new ExampleModal()
-    }
-  });
+//   modals = new ModalsService({
+//     modals: {
+//       example: new ExampleModal()
+//     }
+//   });
 
-  modalTriggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      modals.open(trigger.getAttribute('attr-modal'));
-    });
-  });
-}
+//   modalTriggers.forEach(trigger => {
+//     trigger.addEventListener('click', () => {
+//       modals.open(trigger.getAttribute('attr-modal'));
+//     });
+//   });
+// }

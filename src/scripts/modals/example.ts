@@ -1,13 +1,13 @@
-import { IModalElement } from "../service/modals";
+// import { IModalElement } from "../service/modals";
 
-export class ExampleModal implements IModalElement {
-  public id = 'example';
+// export class ExampleModal implements IModalElement {
+//   public id = 'example';
 
-  public onInit() {
-    console.log('onInit');
-  }
+//   public onInit() {
+//     console.log('onInit');
+//   }
 
-  public onDestroy() {
-    console.log('onDestroy');
-  }
-}
+//   public onDestroy() {
+//     console.log('onDestroy');
+//   }
+// }

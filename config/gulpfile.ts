@@ -57,6 +57,13 @@ export const configHtml: IFrontboxConfig[] = [
 		watch: ['./src/template/includes/*.pug'],
 	},
 	{
+		name: 'extends',
+		files: './src/template/*.pug',
+		dest: '',
+		otherTasksImpact: true,
+		watch: ['./src/template/extends/*.pug'],
+	},
+	{
 		name: 'partials',
 		files: './src/template/partials/*.pug',
 		dest: 'partials',
